@@ -791,6 +791,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="CjU-PR-Lm3" id="Qm3-k9-Ags"/>
+                        <outlet property="playerView" destination="dZa-0r-cuL" id="DRn-by-RUH"/>
                         <outlet property="titleLabel" destination="vxa-WN-GVq" id="gle-1J-uLJ"/>
                     </connections>
                 </viewController>

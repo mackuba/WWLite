@@ -34,11 +34,13 @@ class DataStore: ObservableObject {
     }
 
     func importFromFeed(_ feed: ContentsFeed) {
-        objectWillChange.send()
-
         for item in feed.contents where item.type == .video || item.type == .session {
             let video = SessionVideo(feedItem: item)
             videoMap[video.id] = video
+        }
+
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
         }
     }
 }

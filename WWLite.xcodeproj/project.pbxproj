@@ -11,6 +11,10 @@
 		8C22172324FA8B2600BAE85D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22172224FA8B2600BAE85D /* ViewController.swift */; };
 		8C22172524FA8B2700BAE85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C22172424FA8B2700BAE85D /* Assets.xcassets */; };
 		8C22172824FA8B2700BAE85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C22172624FA8B2700BAE85D /* Main.storyboard */; };
+		8C22173324FA8F3700BAE85D /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22173224FA8F3700BAE85D /* DataImporter.swift */; };
+		8C22173524FA8F8400BAE85D /* ContentsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22173424FA8F8400BAE85D /* ContentsFeed.swift */; };
+		8C22173724FA916000BAE85D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22173624FA916000BAE85D /* DataStore.swift */; };
+		8C22173B24FA921000BAE85D /* SessionVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22173A24FA921000BAE85D /* SessionVideo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		8C22172724FA8B2700BAE85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C22172924FA8B2700BAE85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C22172A24FA8B2700BAE85D /* WWLite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WWLite.entitlements; sourceTree = "<group>"; };
+		8C22173224FA8F3700BAE85D /* DataImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
+		8C22173424FA8F8400BAE85D /* ContentsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsFeed.swift; sourceTree = "<group>"; };
+		8C22173624FA916000BAE85D /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		8C22173A24FA921000BAE85D /* SessionVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionVideo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 		8C22171F24FA8B2600BAE85D /* WWLite */ = {
 			isa = PBXGroup;
 			children = (
+				8C22173124FA8F2A00BAE85D /* Data */,
+				8C22173024FA8F2400BAE85D /* Importer */,
 				8C22172024FA8B2600BAE85D /* AppDelegate.swift */,
 				8C22172224FA8B2600BAE85D /* ViewController.swift */,
 				8C22172424FA8B2700BAE85D /* Assets.xcassets */,
@@ -61,6 +71,24 @@
 				8C22172A24FA8B2700BAE85D /* WWLite.entitlements */,
 			);
 			path = WWLite;
+			sourceTree = "<group>";
+		};
+		8C22173024FA8F2400BAE85D /* Importer */ = {
+			isa = PBXGroup;
+			children = (
+				8C22173424FA8F8400BAE85D /* ContentsFeed.swift */,
+				8C22173224FA8F3700BAE85D /* DataImporter.swift */,
+			);
+			path = Importer;
+			sourceTree = "<group>";
+		};
+		8C22173124FA8F2A00BAE85D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8C22173624FA916000BAE85D /* DataStore.swift */,
+				8C22173A24FA921000BAE85D /* SessionVideo.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +161,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C22173324FA8F3700BAE85D /* DataImporter.swift in Sources */,
 				8C22172324FA8B2600BAE85D /* ViewController.swift in Sources */,
+				8C22173B24FA921000BAE85D /* SessionVideo.swift in Sources */,
 				8C22172124FA8B2600BAE85D /* AppDelegate.swift in Sources */,
+				8C22173724FA916000BAE85D /* DataStore.swift in Sources */,
+				8C22173524FA8F8400BAE85D /* ContentsFeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,10 +14,21 @@ struct VideoList: View {
     var body: some View {
         List {
             ForEach(dataStore.videos) { video in
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(video.title)
-                    Text(video.id).font(.caption)
-                    Divider().padding(.top, 5)
+                VStack {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(video.title)
+                            Text(video.id).font(.caption)
+                        }
+
+                        Spacer()
+
+                        if video.isDownloaded {
+                            Text("⬇")
+                        }
+                    }
+
+                    Divider()
                 }
             }
         }

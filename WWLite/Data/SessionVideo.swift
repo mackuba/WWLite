@@ -8,6 +8,9 @@
 
 import Foundation
 
+let baseDownloadPath = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+    .appendingPathComponent("WWDC")
+
 struct SessionVideo: Identifiable {
     let id: String
     let eventId: String
@@ -17,6 +20,17 @@ struct SessionVideo: Identifiable {
     let videoDownloadLinkSD: URL?
     let videoDownloadLinkHD: URL?
     let videoDuration: Int?
+    var isDownloaded = false
+
+    var downloadPath: URL? {
+        guard let fileName = videoDownloadLinkHD?.lastPathComponent else { return nil }
+        guard eventId.hasPrefix("wwdc") else { return nil }
+
+        let year = eventId.replacingOccurrences(of: "wwdc", with: "")
+        guard !year.isEmpty else { return nil }
+
+        return baseDownloadPath.appendingPathComponent(year).appendingPathComponent(fileName)
+    }
 
     init(feedItem item: ContentsFeed.Item) {
         self.id = item.id
@@ -28,5 +42,9 @@ struct SessionVideo: Identifiable {
         self.videoDownloadLinkSD = item.media?.downloadHD
         self.videoDownloadLinkHD = item.media?.downloadHD
         self.videoDuration = item.media?.duration
+
+        if let downloadPath = downloadPath {
+            self.isDownloaded = FileManager.default.fileExists(atPath: downloadPath.path)
+        }
     }
 }

@@ -22,6 +22,10 @@ class DataStore: ObservableObject {
         let feed = try! JSONDecoder().decode(ContentsFeed.self, from: previewFeedJSON.data(using: .utf8)!)
         store.importFromFeed(feed)
 
+        for (i, key) in store.videoMap.keys.enumerated() {
+            store.videoMap[key]!.isDownloaded = (i % 2 == 1)
+        }
+
         return store
     }
 

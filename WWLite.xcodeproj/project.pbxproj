@@ -18,6 +18,9 @@
 		8C22173F24FA97F800BAE85D /* VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22173E24FA97F800BAE85D /* VideoList.swift */; };
 		8C22174124FA992A00BAE85D /* PreviewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174024FA992A00BAE85D /* PreviewStore.swift */; };
 		8C22174324FA9C8100BAE85D /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174224FA9C8100BAE85D /* VideoListView.swift */; };
+		8C22174624FAA77200BAE85D /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174524FAA77200BAE85D /* VideoDetailViewController.swift */; };
+		8C22174924FAA87000BAE85D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174824FAA87000BAE85D /* MainWindowController.swift */; };
+		8C22174B24FAA93C00BAE85D /* VideoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174A24FAA93C00BAE85D /* VideoListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		8C22173E24FA97F800BAE85D /* VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoList.swift; sourceTree = "<group>"; };
 		8C22174024FA992A00BAE85D /* PreviewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStore.swift; sourceTree = "<group>"; };
 		8C22174224FA9C8100BAE85D /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
+		8C22174524FAA77200BAE85D /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		8C22174824FAA87000BAE85D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		8C22174A24FAA93C00BAE85D /* VideoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +108,9 @@
 		8C22173C24FA97D100BAE85D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C22174724FAA86200BAE85D /* Main */,
 				8C22173D24FA97E800BAE85D /* Sidebar */,
+				8C22174424FAA74600BAE85D /* Detail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,9 +119,26 @@
 			isa = PBXGroup;
 			children = (
 				8C22173E24FA97F800BAE85D /* VideoList.swift */,
+				8C22174A24FAA93C00BAE85D /* VideoListController.swift */,
 				8C22174224FA9C8100BAE85D /* VideoListView.swift */,
 			);
 			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		8C22174424FAA74600BAE85D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8C22174524FAA77200BAE85D /* VideoDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		8C22174724FAA86200BAE85D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8C22174824FAA87000BAE85D /* MainWindowController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +214,13 @@
 				8C22173F24FA97F800BAE85D /* VideoList.swift in Sources */,
 				8C22173324FA8F3700BAE85D /* DataImporter.swift in Sources */,
 				8C22172324FA8B2600BAE85D /* ViewController.swift in Sources */,
+				8C22174624FAA77200BAE85D /* VideoDetailViewController.swift in Sources */,
 				8C22173B24FA921000BAE85D /* SessionVideo.swift in Sources */,
 				8C22174124FA992A00BAE85D /* PreviewStore.swift in Sources */,
 				8C22174324FA9C8100BAE85D /* VideoListView.swift in Sources */,
+				8C22174B24FAA93C00BAE85D /* VideoListController.swift in Sources */,
 				8C22172124FA8B2600BAE85D /* AppDelegate.swift in Sources */,
+				8C22174924FAA87000BAE85D /* MainWindowController.swift in Sources */,
 				8C22173724FA916000BAE85D /* DataStore.swift in Sources */,
 				8C22173524FA8F8400BAE85D /* ContentsFeed.swift in Sources */,
 			);

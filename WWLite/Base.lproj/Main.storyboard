@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="16097"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -683,7 +684,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="WWLite" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -726,10 +727,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="670"/>
         </scene>
-        <!--View Controller-->
+        <!--Video List Controller-->
         <scene sceneID="PkA-5L-3UG">
             <objects>
-                <viewController id="7C5-h8-mDu" sceneMemberID="viewController">
+                <viewController id="7C5-h8-mDu" customClass="VideoListController" customModule="WWLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="K08-CX-s9d">
                         <rect key="frame" x="0.0" y="0.0" width="306" height="394"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -740,23 +741,62 @@
                             </customView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="videoList" destination="cZY-ml-E0p" id="rah-qB-g5h"/>
+                    </connections>
                 </viewController>
                 <customObject id="AsB-6I-AFF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="586" y="459"/>
         </scene>
-        <!--View Controller-->
+        <!--Video Detail View Controller-->
         <scene sceneID="6rx-a6-0Ek">
             <objects>
-                <viewController id="rDo-ik-Wv8" sceneMemberID="viewController">
+                <viewController id="rDo-ik-Wv8" customClass="VideoDetailViewController" customModule="WWLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="JeJ-Z4-5u3">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="626" height="446"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-0r-cuL">
+                                <rect key="frame" x="20" y="108" width="586" height="318"/>
+                            </avPlayerView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-WN-GVq">
+                                <rect key="frame" x="18" y="57" width="97" height="21"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Video Title" id="VaW-IM-mqf">
+                                    <font key="font" metaFont="systemBold" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="CjU-PR-Lm3">
+                                <rect key="frame" x="18" y="30" width="590" height="17"/>
+                                <textFieldCell key="cell" title="Video description" id="RB5-tH-ffM">
+                                    <font key="font" metaFont="menu" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dZa-0r-cuL" secondAttribute="trailing" constant="20" symbolic="YES" id="2eu-DW-fmr"/>
+                            <constraint firstItem="dZa-0r-cuL" firstAttribute="top" secondItem="JeJ-Z4-5u3" secondAttribute="top" constant="20" symbolic="YES" id="CrT-Cj-uDk"/>
+                            <constraint firstItem="CjU-PR-Lm3" firstAttribute="top" secondItem="vxa-WN-GVq" secondAttribute="bottom" constant="10" id="IIY-kk-l9D"/>
+                            <constraint firstAttribute="trailing" secondItem="CjU-PR-Lm3" secondAttribute="trailing" constant="20" id="IQ8-xt-pWc"/>
+                            <constraint firstItem="vxa-WN-GVq" firstAttribute="leading" secondItem="JeJ-Z4-5u3" secondAttribute="leading" constant="20" symbolic="YES" id="Mpk-Yk-ATe"/>
+                            <constraint firstItem="dZa-0r-cuL" firstAttribute="leading" secondItem="JeJ-Z4-5u3" secondAttribute="leading" constant="20" symbolic="YES" id="csu-Zg-BVb"/>
+                            <constraint firstItem="vxa-WN-GVq" firstAttribute="top" secondItem="dZa-0r-cuL" secondAttribute="bottom" constant="30" id="hYh-C2-W3P"/>
+                            <constraint firstItem="CjU-PR-Lm3" firstAttribute="leading" secondItem="vxa-WN-GVq" secondAttribute="leading" id="lWe-Bh-C0e"/>
+                            <constraint firstAttribute="bottom" secondItem="CjU-PR-Lm3" secondAttribute="bottom" constant="30" id="mJk-e5-a5l"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="CjU-PR-Lm3" id="Qm3-k9-Ags"/>
+                        <outlet property="titleLabel" destination="vxa-WN-GVq" id="gle-1J-uLJ"/>
+                    </connections>
                 </viewController>
                 <customObject id="psY-O2-0ci" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="894"/>
+            <point key="canvasLocation" x="746" y="967"/>
         </scene>
     </scenes>
 </document>

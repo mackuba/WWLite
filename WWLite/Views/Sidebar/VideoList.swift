@@ -10,9 +10,10 @@ import SwiftUI
 
 struct VideoList: View {
     @ObservedObject var dataStore: DataStore
+    @Binding var selectedId: String?
 
     var body: some View {
-        List {
+        List(selection: $selectedId) {
             ForEach(dataStore.videos) { video in
                 VStack {
                     HStack {
@@ -30,6 +31,7 @@ struct VideoList: View {
 
                     Divider()
                 }
+                .tag(video.id)
             }
         }
     }
@@ -37,6 +39,6 @@ struct VideoList: View {
 
 struct VideoList_Previews: PreviewProvider {
     static var previews: some View {
-        VideoList(dataStore: DataStore.previewStore)
+        VideoList(dataStore: DataStore.previewStore, selectedId: .constant(nil))
     }
 }

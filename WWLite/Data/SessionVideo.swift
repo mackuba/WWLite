@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SessionVideo {
+struct SessionVideo: Identifiable {
     let id: String
     let eventId: String
     let webPermalink: String

@@ -37,6 +37,45 @@ class DataStore: ObservableObject {
         return videoMap[id]
     }
 
+    func downloadVideo(id: String) {
+        guard var video = videoMap[id],
+              !video.isDownloaded && !video.isDownloading,
+              let downloadURL = video.videoDownloadLinkHD,
+              let targetLocation = video.downloadPath else {
+            return
+        }
+
+        self.objectWillChange.send()
+        video.isDownloading = true
+        videoMap[id] = video
+
+        print("Downloading video from \(downloadURL)")
+
+        let task = URLSession.shared.downloadTask(with: downloadURL) { (url, response, error) in
+            guard let url = url else {
+                print("Error downloading file: \(String(describing: error)) \(String(describing: response))")
+                return
+            }
+
+            do {
+                try FileManager.default.moveItem(at: url, to: targetLocation)
+                print("Saved video to \(targetLocation)")
+
+                DispatchQueue.main.async {
+                    video.isDownloading = false
+                    video.isDownloaded = true
+
+                    self.objectWillChange.send()
+                    self.videoMap[id] = video
+                }
+            } catch let error {
+                print("Error saving file: \(error)")
+            }
+        }
+
+        task.resume()
+    }
+
     func importFromFeed(_ feed: ContentsFeed) {
         for item in feed.contents where item.type == .video || item.type == .session {
             let video = SessionVideo(feedItem: item)

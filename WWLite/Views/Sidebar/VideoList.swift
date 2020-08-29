@@ -26,12 +26,20 @@ struct VideoList: View {
 
                         if video.isDownloaded {
                             Text("⬇")
+                        } else if video.isDownloading {
+                            Text("…")
                         }
                     }
 
                     Divider()
                 }
                 .tag(video.id)
+                .contextMenu(ContextMenu() {
+                    Button("Download") {
+                        self.dataStore.downloadVideo(id: video.id)
+                    }
+                    .disabled(video.isDownloaded)
+                })
             }
         }
     }

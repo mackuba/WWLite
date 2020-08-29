@@ -20,7 +20,9 @@ struct SessionVideo: Identifiable {
     let videoDownloadLinkSD: URL?
     let videoDownloadLinkHD: URL?
     let videoDuration: Int?
+
     var isDownloaded = false
+    var isDownloading = false
 
     var downloadPath: URL? {
         guard let fileName = videoDownloadLinkHD?.lastPathComponent else { return nil }

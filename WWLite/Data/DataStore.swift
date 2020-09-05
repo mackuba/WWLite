@@ -58,6 +58,9 @@ class DataStore: ObservableObject {
             }
 
             do {
+                let directory = targetLocation.deletingLastPathComponent()
+
+                try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
                 try FileManager.default.moveItem(at: url, to: targetLocation)
                 print("Saved video to \(targetLocation)")
 

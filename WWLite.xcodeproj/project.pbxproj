@@ -21,6 +21,7 @@
 		8C22174624FAA77200BAE85D /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174524FAA77200BAE85D /* VideoDetailViewController.swift */; };
 		8C22174924FAA87000BAE85D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174824FAA87000BAE85D /* MainWindowController.swift */; };
 		8C22174B24FAA93C00BAE85D /* VideoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22174A24FAA93C00BAE85D /* VideoListController.swift */; };
+		8CF958C825054346008C2709 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF958C725054346008C2709 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		8C22174524FAA77200BAE85D /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		8C22174824FAA87000BAE85D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		8C22174A24FAA93C00BAE85D /* VideoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListController.swift; sourceTree = "<group>"; };
+		8CF958C725054346008C2709 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF958C825054346008C2709 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 			children = (
 				8C22171F24FA8B2600BAE85D /* WWLite */,
 				8C22171E24FA8B2600BAE85D /* Products */,
+				8CF958C625054346008C2709 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +143,14 @@
 				8C22174824FAA87000BAE85D /* MainWindowController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8CF958C625054346008C2709 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CF958C725054346008C2709 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

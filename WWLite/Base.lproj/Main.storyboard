@@ -757,7 +757,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="626" height="446"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-0r-cuL">
+                            <avPlayerView controlsStyle="inline" showsFullScreenToggleButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-0r-cuL">
                                 <rect key="frame" x="20" y="108" width="586" height="318"/>
                             </avPlayerView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-WN-GVq">
